@@ -1,6 +1,16 @@
 FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
+ İklim-branch
+COPY pom.xml .
+COPY src ./src
+
+RUN apt-get update && \
+    apt-get install -y maven && \
+    mvn dependency:go-offline && \
+    mvn clean package -DskipTests
+
+CMD ["java", "-jar", "target/university-guide-1.0.0.jar"]
 
 
 COPY pom.xml .
@@ -13,3 +23,4 @@ RUN apk add --no-cache maven && \
     mvn clean package -DskipTests
 
     CMD ["java", "-jar", "target/university-guide-1.0.0.jar"]
+main
