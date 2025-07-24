@@ -1,4 +1,4 @@
-# Kullanılacak temel imaj
+# ✅ Doğru Node.js imajı
 FROM node:18-alpine
 
 # Uygulama dosyalarının yerleştirileceği klasör
@@ -21,3 +21,4 @@ EXPOSE 3000
 
 # Uygulama çalıştırma komutu
 CMD ["npm", "start"]
+
